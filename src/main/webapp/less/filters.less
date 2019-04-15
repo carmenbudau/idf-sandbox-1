@@ -1,0 +1,159 @@
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+@import (reference) "breakpoints.less";
+@import (reference) "scrollbar.less";
+
+.filters {
+  --filter-switch-height: 30px;
+  --filters-padding-h: 10px;
+  --toolbar-tablet-height: 440px;
+  display: flex;
+  flex-direction: column;
+
+  @media @mobile {
+    --filters-padding-w: 30px;
+  }
+  @media @tablet {
+    --filters-padding-w: 15px;
+  }
+  @media @desktop {
+    --filters-padding-w: 15px;
+    width: 30%;
+  }
+  @media @desktop-xl {
+    --filters-padding-w: 15px;
+    width: 25%;
+  }
+
+  .filter-toolbar {
+    &:extend(.scrollbar all);
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: row wrap;
+    background: @lightGrey;
+
+    @media @mobile, @tablet {
+      justify-content: flex-start;
+      .transition(1s);
+      width: 100vw;
+      height: calc(~"100vh - var(--filter-switch-height)");
+    }
+
+    @media @tablet {
+      height: calc(~"var(--toolbar-tablet-height) - var(--filter-switch-height)");
+    }
+
+    .divider {
+      border-bottom: 2px solid @white;
+      height: 0;
+      padding: 0;
+      margin: 5px 0;
+      width: 100%;
+    }
+
+    & > div {
+      padding: var(--filters-padding-h) var(--filters-padding-w);
+      width: 100%;
+
+      @media @tablet {
+        --filters-padding-h: 5px;
+        width: auto;
+      }
+      @media @desktop, @desktop-xl {
+        --filters-padding-h: 5px;
+      }
+
+      &.title, &.gender, &.suffix {
+        width: calc(~"50% - 2*var(--filters-padding-w)");
+        @media @tablet {
+          width: auto;
+        }
+      }
+
+      &.date {
+        width: calc(~"45% - 2*var(--filters-padding-w)");
+        @media @tablet {
+          width: auto;
+        }
+      }
+    }
+
+    .apply-filters {
+      width: 100%;
+      line-height: 30px;
+      margin: 15px var(--filters-padding-w);
+      color: @white;
+      background: darken(@green,10%);
+      cursor: pointer;
+      opacity: .7;
+      border: 0;
+      .border-radius(3px);
+      @media @desktop, @desktop-xl {
+        background: @orange;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .filter-switch {
+    position: relative;
+    height: var(--filter-switch-height);
+    @media @desktop, @desktop-xl {
+      display: none;
+    }
+    label {
+      width: 100%;
+      text-align: center;
+      line-height: var(--filter-switch-height);
+      cursor: pointer;
+      color: fadeOut(@orange, 10%);
+      font-size: 15px;
+
+      &.collapse {
+        background: @lightGrey;
+      }
+
+      &:hover,
+      &:active {
+        color: @orange;
+      }
+    }
+  }
+
+  input[name=filter-collapsed] {
+    display: none;
+
+    @media @mobile, @tablet {
+      &:checked {
+        ~ .filter-toolbar {
+          margin-top: calc(~"-100vh + var(--filter-switch-height)");
+        }
+
+        ~ .filter-switch .rise {
+          display: block;
+          top: 0;
+        }
+
+        ~ .filter-switch .collapse {
+          display: none;
+        }
+      }
+
+      ~ .filter-switch .rise {
+        display: none;
+      }
+    }
+
+    @media @tablet {
+      &:checked {
+        ~ .filter-toolbar {
+          margin-top: calc(~"var(--filter-switch-height) - var(--toolbar-tablet-height)");
+        }
+      }
+    }
+  }
+}

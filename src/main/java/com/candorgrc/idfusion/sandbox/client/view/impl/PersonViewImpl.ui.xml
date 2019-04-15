@@ -6,105 +6,105 @@
 
     </ui:style>
     <g:HTMLPanel styleName="person-view">
-        <sidebar class="filters">
+        <header class="filters">
             <input type="checkbox" id="filter-collapsed" name="filter-collapsed" checked="checked"/>
-            <div class="filter-content">
-                <div class="filter-toolbar">
-                    <div class="title">
-                        <span class="label">Title:</span>
-                        <select class="value">
-                            <option value=""></option>
-                            <option value="Mr.">Mr.</option>
-                            <option value="Mrs.">Mrs.</option>
-                            <option value="Ms.">Ms.</option>
-                        </select>
-                    </div>
-                    <div class="first-name">
-                        <span class="label">First Name:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="last-name">
-                        <span class="label">Last Name:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="suffix">
-                        <span class="label">Suffix:</span>
-                        <select class="value">
-                            <option value=""></option>
-                            <option value="PhD">PhD.</option>
-                            <option value="Engineer">Engineer</option>
-                            <option value="Doctor">Doctor</option>
-                        </select>
-                    </div>
-                    <div class="gender">
-                        <span class="label">Gender:</span>
-                        <select class="value">
-                            <option value=""></option>
-                            <option value="m">Male</option>
-                            <option value="f">Female</option>
-                        </select>
-                    </div>
-                    <div class="race">
-                        <span class="label">Race:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="language">
-                        <span class="label">Language:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="university">
-                        <span class="label">University:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="buzzword">
-                        <span class="label">Buzzword:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="email">
-                        <span class="label">E-Mail:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="job-title">
-                        <span class="label">Job Title:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="linkedin-skill">
-                        <span class="label">LinkedinIn Skill:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="company">
-                        <span class="label">Company:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="dept">
-                        <span class="label">Department:</span>
-                        <input type="text" class="value"/>
-                    </div>
-                    <div class="ein">
-                        <span class="label">Employer Identification Number:</span>
-                        <input type="text" class="value"/>
-                    </div>
-
-
-                    <div>
-                        <label for="start">Start</label>
-                        <input type="date" id="start" value="2018-09-29"
-                               min="2018-01-01" max="2018-12-31"/>
-                    </div>
-                    <div>
-                        <label for="end">End</label>
-                        <input type="date" id="end" value="2018-10-29"
-                               min="2018-01-01" max="2018-12-31"/>
-                    </div>
-
+            <div class="filter-toolbar">
+                <div class="title">
+                    <span class="label">Title:</span>
+                    <select class="value">
+                        <option value=""></option>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Ms.">Ms.</option>
+                    </select>
                 </div>
+                <div class="first-name">
+                    <span class="label">First Name:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="last-name">
+                    <span class="label">Last Name:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="divider"></div>
+                <div class="suffix">
+                    <span class="label">Suffix:</span>
+                    <select class="value">
+                        <option value=""></option>
+                        <option value="PhD">PhD.</option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Doctor">Doctor</option>
+                    </select>
+                </div>
+                <div class="gender">
+                    <span class="label">Gender:</span>
+                    <select class="value">
+                        <option value=""></option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+                <div class="race">
+                    <span class="label">Race:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="divider"></div>
+                <div class="language">
+                    <span class="label">Language:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="university">
+                    <span class="label">University:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="job-title">
+                    <span class="label">Job Title:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="company">
+                    <span class="label">Company:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="email">
+                    <span class="label">E-Mail:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="divider"></div>
+                <div class="linkedin-skill">
+                    <span class="label">LinkedinIn Skill:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="buzzword">
+                    <span class="label">Buzzword:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="divider"></div>
+                <div class="dept">
+                    <span class="label">Department:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="ein">
+                    <span class="label">Employer Identification Number:</span>
+                    <input type="text" class="value"/>
+                </div>
+                <div class="date">
+                    <label for="start">Start</label>
+                    <input type="date" id="start" value="2018-09-29"
+                           min="2018-01-01" max="2018-12-31"/>
+                </div>
+                <div class="date">
+                    <label for="end">End</label>
+                    <input type="date" id="end" value="2018-10-29"
+                           min="2018-01-01" max="2018-12-31"/>
+                </div>
+
                 <button ui:field="apply" class="apply-filters">Apply Filters</button>
             </div>
             <div class="filter-switch">
-                <label class="collapse" for="filter-collapsed">Filters</label>
-                <label class="rise" for="filter-collapsed">Filters</label>
+                <label class="collapse" for="filter-collapsed">Hide filters <i class="fas fa-level-up-alt"></i> </label>
+                <label class="rise" for="filter-collapsed">Show filters <i class="fas fa-level-down-alt"></i> </label>
             </div>
-        </sidebar>
+        </header>
         <section class="person-content">
             <header class="controls">
                 <button ui:field="toggle" class="toggle-view-mode">Switch View Mode</button>

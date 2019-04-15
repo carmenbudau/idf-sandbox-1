@@ -49,7 +49,7 @@
 		<inject.gin.version>2.1.2</inject.gin.version>
 		<inject.guice.version>3.0</inject.guice.version>
 		<libsass.version>0.2.10-libsass_3.5.3</libsass.version>
-		<lesscss.version>1.7.0.1.1</lesscss.version>
+		<lesscss.version>1.2.1</lesscss.version>
 	</properties>
 
 	<dependencyManagement>
@@ -241,6 +241,24 @@
 
 			<!-- Build less files: less to css -->
 			<plugin>
+				<groupId>biz.gabrys.maven.plugins</groupId>
+				<artifactId>lesscss-maven-plugin</artifactId>
+				<version>${lesscss.version}</version>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<sourceDirectory>${project.basedir}/src/main/webapp/less</sourceDirectory>
+							<outputDirectory>${project.basedir}/src/main/webapp/less</outputDirectory>
+							<compress>true</compress>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!--<plugin>
 				<groupId>org.lesscss</groupId>
 				<artifactId>lesscss-maven-plugin</artifactId>
 				<version>${lesscss.version}</version>
@@ -256,7 +274,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 
 			<!-- Build SASS files: scss to css -->
 			<plugin>

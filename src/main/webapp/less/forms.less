@@ -1,0 +1,48 @@
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+@import (reference) "breakpoints.less";
+
+.field-reset {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.dropdown-arrow {
+  background-image: linear-gradient(45deg, transparent 50%, darken(@green,10%) 50%),
+  linear-gradient(135deg, darken(@green,10%) 50%, transparent 50%),
+  linear-gradient(to right, @grey, @grey);
+  background-position: calc(~"100% - 15px") 9px,
+  calc(~"100% - 10px") 9px,
+  calc(~"100% - 27px") 3px;
+  background-size: 5px 5px,
+  5px 5px,
+  1px 15px;
+  background-repeat: no-repeat;
+}
+
+input, select {
+  .field-reset();
+  .border-radius(3px);
+  border: 1px solid @grey;
+  padding: 4px;
+  margin: 0;
+  background: rgba(255, 255, 255, .7);
+  width: 100%;
+}
+
+select {
+  .dropdown-arrow();
+  padding-right: 30px;
+  @media @mobile, @tablet {
+  }
+}
+
+label, .label {
+  display: block;
+  color: @darkGrey;
+  font-size: 12px;
+  padding-bottom: 2px;
+}
